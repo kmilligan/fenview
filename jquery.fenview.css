@@ -1,0 +1,28 @@
+.fenview-rank
+{
+	width: 100%;
+	overflow: auto;
+}
+
+.fenview-square
+{
+	width: 12.5%;
+	float: left;
+	font-family: Arial, sans-serif; 
+	text-align: center;
+}
+
+.fenview-dark-square
+{
+	background-color: #b58863;
+}
+
+.fenview-light-square
+{
+	background-color: #f0d9b5;
+}
+
+.square-lit
+{
+	background-color: #29f;
+}
