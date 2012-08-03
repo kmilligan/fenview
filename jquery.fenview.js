@@ -174,6 +174,11 @@
 	{
 		this.element = element;
 
+		// need to track our board uniquely
+		// for sizing purposes
+		this.id = 'board' + Math.floor(Math.random() * 1000000);
+		this.element.addClass(this.id);
+
 		// initialize our Squares
 		this.squares = [];
 		for(var f = 1; f < 9; f++)
@@ -225,7 +230,8 @@
 			document.head.appendChild(this.dynCSS);
 		}	
 
-		var rule = '.fenview-square { font-size: ' 
+		var rule = '.' + this.id +
+					' .fenview-square { font-size: ' 
 						+ Math.ceil(width * 0.83) 
 						+ 'px; } '; // no space!
 
