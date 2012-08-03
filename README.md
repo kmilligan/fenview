@@ -32,3 +32,13 @@ is to add the following to your html head:
             $('.board').fenview();
         });
     </script>
+    
+If you want to set the FEN to something other than the typical starting position, you can do this instead:
+
+            $('.board').fenview({ fen: "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2" });
+
+Notes
+-----
+
+*   fenview's board will fill the witdth of the container it is attached to, and automatically set the height of the board accordingly. If the container is resized, the board will attempt to resize.
+*   You can move pieces on the fenview board by clicking on the piece, then clicking on the destination square. fenview does *not* check for move legality at this point.
