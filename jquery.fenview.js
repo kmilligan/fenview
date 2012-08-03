@@ -112,7 +112,7 @@
 			|| (fileEven && rankOdd))
 			this.color = 1;
 	
-		this.element = $('<div class="fenview-square fenview-squared">&nbsp;</div>');
+		this.element = $('<div class="fenview-square">&nbsp;</div>');
 		this.element.square = this;
 		this.element.attr('rel', this.name);
 		this.element.addClass(this.color?'fenview-light-square':'fenview-dark-square');
@@ -233,7 +233,8 @@
 		var rule = '.' + this.id +
 					' .fenview-square { font-size: ' 
 						+ Math.ceil(width * 0.83) 
-						+ 'px; } '; // no space!
+						+ 'px; ' + // no space before px!
+						' height: ' + width + 'px; }';
 
 		this.dynCSS.innerHTML = rule;
 	}
