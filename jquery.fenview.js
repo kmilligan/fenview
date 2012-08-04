@@ -242,7 +242,7 @@
 		if(typeof this.dynCSS == 'undefined')
 		{
 			this.dynCSS = document.createElement('style');
-			document.head.appendChild(this.dynCSS);
+			document.getElementsByTagName('head')[0].appendChild(this.dynCSS);
 		}	
 
 		var rule = '.' + this.id +
@@ -250,7 +250,7 @@
 						+ Math.ceil(width * 0.82) 
 						+ 'px; ' + // no space before px!
 						' height: ' + width + 'px; }';
-
+	
 		this.dynCSS.innerHTML = rule;
 	}
 
