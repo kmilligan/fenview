@@ -8,6 +8,20 @@
 (function($)
 {
 	/**
+	* This helps us with inheritence, and not all browsers have it yet.
+	*@see http://javascript.crockford.com/prototypal.html
+	*/
+	if(typeof Object.create !== 'function')
+	{
+		Object.create = function (o)
+		{
+			function F() {};
+			F.prototype = o;
+			return new F();
+		};
+	}	
+
+	/**
 	* Main fn to start up the module
 	*/
 	$.fenview = function(element, options)
@@ -72,7 +86,7 @@
 		'b': '\u265d',
 		'q': '\u265b',
 		'k': '\u265a',
-		'p': '\u265f',
+		'p': '\u265f'
 	};
 	
 	/**
