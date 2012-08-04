@@ -246,12 +246,16 @@
 		}	
 
 		var rule = '.' + this.id +
-					' .fenview-square { font-size: ' 
-						+ Math.ceil(width * 0.82) 
-						+ 'px; ' + // no space before px!
-						' height: ' + width + 'px; }';
-	
-		this.dynCSS.innerHTML = rule;
+				' .fenview-square { font-size: ' 
+				+ Math.ceil(width * 0.82) 
+				+ 'px; ' + // no space before px!
+				' height: ' + width + 'px; }';
+		
+		// IE does it differently...
+		if(this.dynCSS.styleSheet)
+			this.dynCSS.styleSheet.cssText = rule;
+		else	
+			this.dynCSS.innerHTML = rule;
 	}
 
 	Board.placePiece = function(piece, file, rank)
