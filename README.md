@@ -35,7 +35,7 @@ is to add the following to your html head:
     
 If you want to set the FEN to something other than the typical starting position, you can do this instead:
 
-            $('.board').fenview({ fen: "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2" });
+	$('.board').fenview({ fen: "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2" });
 
 And if you want to set the FEN on a given board after it's already been set up:
 
