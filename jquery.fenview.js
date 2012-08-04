@@ -16,22 +16,16 @@
 		this.options = $.extend({}, $.fenview.defaultOptions, options);
 		
 		// setup our main object
-		var board = Object.create(Board).init(element);
-		board.createDisplay();
+		this.board = Object.create(Board).init(element);
+		this.board.createDisplay();
 
 		// starting FEN
-		board.setFEN(this.options.fen);
+		this.board.setFEN(this.options.fen);
 	
-		// attach so they can do stuff from the outside
-		element[0].getBoard = function()
-		{
-			return board;
-		}
-
-		// ...and catch resize events
+		// catch resize events
 		$(window).resize(function()
 		{
-			board.autosetHeight();
+			this.board.autosetHeight();
 		});
 	}
 
@@ -42,8 +36,15 @@
 	{
 		return this.each(function()
 		{
-			// TODO: understand the outer parens here.
-			(new $.fenview($(this), options));
+			// already have one?
+			if($(this).data('fenview') != undefined)
+				return;
+
+			// create...
+			var plugin = new $.fenview($(this), options);
+			
+			// ...and make it easy to access from outside
+			$(this).data('fenview', plugin.board);
 		});
 	};
 
@@ -232,7 +233,7 @@
 
 		var rule = '.' + this.id +
 					' .fenview-square { font-size: ' 
-						+ Math.ceil(width * 0.83) 
+						+ Math.ceil(width * 0.82) 
 						+ 'px; ' + // no space before px!
 						' height: ' + width + 'px; }';
 

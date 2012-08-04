@@ -7,11 +7,18 @@
 			$(document).ready(function()
 			{
 				$('.board').fenview();
+
+				$('.two').data('fenview').setFEN('rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2');
 			});
 		</script>
+		<style>
+		.one { width: 20em; }
+		.two { width: 30em; }
+		</style>
 	</head>
 	<body>
 		<h2>FENView Test</h2>
-		<div class='board'></div>
+		<div class='board one'></div>
+		<div class='board two'></div>
 	</body>
 </html>
