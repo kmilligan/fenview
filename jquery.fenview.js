@@ -37,9 +37,10 @@
 		this.board.setFEN(this.options.fen);
 	
 		// catch resize events
+		var that = this;
 		$(window).resize(function()
 		{
-			this.board.autosetHeight();
+			that.board.autosetHeight();
 		});
 	}
 
