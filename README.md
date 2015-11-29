@@ -3,6 +3,11 @@ fenview
 
 Simple FEN-viewer (chess position notation) jQuery plugin 
 
+DEPRECATED
+----------
+
+This project has been superseded by [chessn00b](https://github.com/kmilligan/chessn00b) -- you should look at that instead.
+
 WTF is FEN?
 -----------
 
